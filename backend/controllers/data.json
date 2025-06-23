@@ -1,0 +1,825 @@
+{
+  "spacece_ptp_milestones": {
+    "curriculum_levels": [
+      {
+        "level": "Level 1",
+        "age_range": "1-1.5 years",
+        "months": [
+          {
+            "month": 12,
+            "physical_development": [
+              "Pulls to stand using furniture",
+              "Cruises along furniture",
+              "Can squat and stand again",
+              "Transfers object hand to hand"
+            ],
+            "cognitive_development": [
+              "Explores cause and effect (bangs, drops toys)",
+              "Begins object permanence (searches when toy is hidden)",
+              "Interested in visual differences (colors/shapes)"
+            ],
+            "socio_emotional_development": [
+              "Shows anxiety around strangers",
+              "Demonstrates preference for primary caregiver",
+              "Expresses frustration through crying"
+            ],
+            "language_development": [
+              "Turns when name is called",
+              "Uses varied babbling sounds",
+              "Mimics adult sounds with intonation",
+              "Begins using gestures (e.g., pointing)"
+            ],
+            "adaptive_self_help_skills": [
+              "Begins holding spoon with whole hand",
+              "Finger-feeds independently",
+              "Tries to drink from cup with help"
+            ],
+            "sensory_emotional_regulation": [
+              "Sensitive to loud noises",
+              "Seeks familiar sensory input (blankets, textures)",
+              "Calms with rocking or caregiver voice"
+            ]
+          },
+          {
+            "month": 13,
+            "physical_development": [
+              "Walks with one hand held",
+              "Climbs over small obstacles",
+              "Picks up small objects with thumb and forefinger (pincer grasp)"
+            ],
+            "cognitive_development": [
+              "Experiments with opening and closing objects",
+              "Drops items repeatedly to observe fall",
+              "Focuses on pictures in books for short time"
+            ],
+            "socio_emotional_development": [
+              "Responds to emotions of others",
+              "Smiles and vocalizes to familiar people",
+              "Cries if another child cries"
+            ],
+            "language_development": [
+              "Understands common words (\"ball\", \"bye\")",
+              "Tries to imitate familiar words",
+              "Understands \"no\" but doesn't always obey"
+            ],
+            "adaptive_self_help_skills": [
+              "Removes socks or hat independently",
+              "Assists with dressing (e.g., lifts arms for shirt)",
+              "Brings objects when requested"
+            ],
+            "sensory_emotional_regulation": [
+              "Explores toys using mouth and hands",
+              "Enjoys water and messy play",
+              "Begins self-soothing with blanket/thumb"
+            ]
+          },
+          {
+            "month": 14,
+            "physical_development": [
+              "Walks alone with few falls",
+              "Climbs onto low furniture",
+              "Stands up from floor without support"
+            ],
+            "cognitive_development": [
+              "Recognizes familiar images in books",
+              "Matches objects by shape or color",
+              "Begins problem-solving by trial and error"
+            ],
+            "socio_emotional_development": [
+              "Enjoys playing with caregiver",
+              "Laughs in social play",
+              "Begins showing possessiveness of toys"
+            ],
+            "language_development": [
+              "Says 2–4 simple words meaningfully",
+              "Follows simple one-step directions (\"Come here\")",
+              "Uses gestures like waving \"bye-bye\""
+            ],
+            "adaptive_self_help_skills": [
+              "Begins trying to use spoon more skillfully",
+              "Drinks from cup with some spilling",
+              "Brings shoes when asked"
+            ],
+            "sensory_emotional_regulation": [
+              "Tries new textures (soft/hard food)",
+              "Responds to music with movement",
+              "Calms with routines or familiar environment"
+            ]
+          },
+          {
+            "month": 15,
+            "physical_development": [
+              "Walks backward a few steps",
+              "Crawls up stairs",
+              "Tries to run stiffly",
+              "Throws a small ball"
+            ],
+            "cognitive_development": [
+              "Understands \"in\" and \"out\" concepts",
+              "Finds hidden toy under cloth",
+              "Stacks two blocks",
+              "Turns pages in book (multiple at a time)"
+            ],
+            "socio_emotional_development": [
+              "Shows more independence",
+              "Recognizes own name and family members",
+              "Begins to imitate simple adult tasks (sweeping, talking on phone)"
+            ],
+            "language_development": [
+              "Points to familiar people/objects when named",
+              "Imitates words",
+              "Understands basic questions (\"Where is Mama?\")"
+            ],
+            "adaptive_self_help_skills": [
+              "Starts brushing teeth with help",
+              "Helps wash hands",
+              "Tries undressing self (removes pants/loose clothes)"
+            ],
+            "sensory_emotional_regulation": [
+              "Notices and avoids unpleasant textures",
+              "Uses transitional object (e.g., toy/blanket) to soothe",
+              "Reacts to caregiver's emotions"
+            ]
+          },
+          {
+            "month": 16,
+            "physical_development": [
+              "Walks up stairs with help",
+              "Begins kicking ball",
+              "Jumps with both feet off ground (may not lift completely)"
+            ],
+            "cognitive_development": [
+              "Completes shape sorter with help",
+              "Stacks 3–4 blocks",
+              "Understands function of objects (brush for hair)"
+            ],
+            "socio_emotional_development": [
+              "Enjoys peer presence but plays side-by-side (parallel play)",
+              "Offers toy to adult",
+              "Begins tantrums when frustrated"
+            ],
+            "language_development": [
+              "Combines two words (\"Mama go\", \"More milk\")",
+              "Understands and responds to daily routine cues",
+              "Follows 2-step instructions occasionally"
+            ],
+            "adaptive_self_help_skills": [
+              "Eats with spoon with little spilling",
+              "Uses cup without lid",
+              "Tries putting on hat/shoes"
+            ],
+            "sensory_emotional_regulation": [
+              "Shows clear preferences for textures/sounds",
+              "Begins expressing emotions like anger or sadness more clearly",
+              "May react strongly to routine changes"
+            ]
+          },
+          {
+            "month": 17,
+            "physical_development": [
+              "Jumps in place with both feet",
+              "Walks upstairs holding hand",
+              "Kicks a ball forward"
+            ],
+            "cognitive_development": [
+              "Mimics adult actions (talking on phone, brushing hair)",
+              "Begins sorting by color/shape",
+              "Identifies body parts on doll/self"
+            ],
+            "socio_emotional_development": [
+              "Seeks approval and praise",
+              "Shows fear in new situations",
+              "Enjoys being the center of adult attention"
+            ],
+            "language_development": [
+              "Uses 10–20 clear words",
+              "Names familiar objects/body parts",
+              "Uses pronouns like \"me,\" \"mine\""
+            ],
+            "adaptive_self_help_skills": [
+              "Shows toilet interest/signals need",
+              "Puts arm through sleeve",
+              "Washes/drys hands with supervision"
+            ],
+            "sensory_emotional_regulation": [
+              "Self-soothes more effectively (humming, rocking)",
+              "Reacts calmly to familiar transitions",
+              "Manages moderate frustration with support"
+            ]
+          }
+        ]
+      },
+      {
+        "level": "Level 2",
+        "age_range": "1.5-2 years",
+        "months": [
+          {
+            "month": 18,
+            "physical_development": [
+              "Runs without falling frequently",
+              "Climbs on/off furniture independently",
+              "Pushes/pulls toys while walking"
+            ],
+            "cognitive_development": [
+              "Begins to sort shapes and colors",
+              "Explores toys with moving parts",
+              "Imitates simple pretend play (feeding doll)"
+            ],
+            "socio_emotional_development": [
+              "Expresses affection openly",
+              "Shows defiant behavior (\"no\" stage)",
+              "Begins playing near peers (parallel play)"
+            ],
+            "language_development": [
+              "Uses 20+ words",
+              "Identifies familiar people in pictures",
+              "Follows simple 2-step commands (\"Get your shoes and give them to me\")"
+            ],
+            "adaptive_self_help_skills": [
+              "Uses spoon and cup independently with minimal spilling",
+              "Helps undress self",
+              "Tries to wash own hands"
+            ],
+            "sensory_emotional_regulation": [
+              "Enjoys messy activities like sand/water play",
+              "Seeks comfort when upset",
+              "Reacts to loud sounds with covering ears"
+            ]
+          },
+          {
+            "month": 19,
+            "physical_development": [
+              "Kicks ball forward",
+              "Walks up and down stairs with support",
+              "Begins to jump with both feet"
+            ],
+            "cognitive_development": [
+              "Matches objects (by color or shape)",
+              "Understands object functions (spoon for eating)",
+              "Begins simple problem-solving (puzzle pieces)"
+            ],
+            "socio_emotional_development": [
+              "Copies adults and other children",
+              "Shows jealousy if attention is given elsewhere",
+              "Begins labeling own emotions (sad, happy)"
+            ],
+            "language_development": [
+              "Begins combining 2–3 word phrases (\"Want juice\", \"Go park now\")",
+              "Points to 3-5 body parts",
+              "Names common objects"
+            ],
+            "adaptive_self_help_skills": [
+              "Helps put on clothes",
+              "Signals need for toilet",
+              "Eats finger foods and drinks independently"
+            ],
+            "sensory_emotional_regulation": [
+              "Starts showing preferences in textures and sounds",
+              "Uses a comfort object (toy, blanket) when upset",
+              "May resist transitions"
+            ]
+          },
+          {
+            "month": 20,
+            "physical_development": [
+              "Runs steadily",
+              "Carries toys while walking",
+              "Begins to throw a ball overhand"
+            ],
+            "cognitive_development": [
+              "Engages in pretend play (cooking, cleaning)",
+              "Identifies differences in sizes/shapes",
+              "Begins understanding spatial words (\"under,\" \"on\")"
+            ],
+            "socio_emotional_development": [
+              "Imitates peers' actions",
+              "Begins to share with prompts",
+              "Seeks adult approval"
+            ],
+            "language_development": [
+              "Vocabulary growing to 50+ words",
+              "Understands questions (\"What's that?\")",
+              "Begins using personal pronouns (I, me, you)"
+            ],
+            "adaptive_self_help_skills": [
+              "Begins toilet training",
+              "Brushes teeth with help",
+              "Assists in tidying up toys"
+            ],
+            "sensory_emotional_regulation": [
+              "Begins to regulate emotions when guided",
+              "Responds well to music and rhythm",
+              "Uses words like \"no,\" \"mine\" to express"
+            ]
+          },
+          {
+            "month": 21,
+            "physical_development": [
+              "Builds tower of 5+ blocks",
+              "Kicks a ball with direction",
+              "Balances momentarily on one foot (with support)"
+            ],
+            "cognitive_development": [
+              "Names basic colors",
+              "Completes simple insert puzzles",
+              "Remembers object locations"
+            ],
+            "socio_emotional_development": [
+              "Engages in turn-taking with help",
+              "Fears imaginary things (monsters)",
+              "Uses adult cues to navigate conflict"
+            ],
+            "language_development": [
+              "Uses short sentences (\"I want water\")",
+              "Asks simple questions (\"What's this?\")",
+              "Follows short stories and songs"
+            ],
+            "adaptive_self_help_skills": [
+              "Begins pulling up pants",
+              "Washes and dries hands with supervision",
+              "Indicates need for toilet more consistently"
+            ],
+            "sensory_emotional_regulation": [
+              "Starts managing changes with some prep",
+              "Mimics caregiver calming strategies",
+              "Identifies feelings in story characters"
+            ]
+          },
+          {
+            "month": 22,
+            "physical_development": [
+              "Jumps down from low step",
+              "Begins climbing playground structures",
+              "Walks backward with control"
+            ],
+            "cognitive_development": [
+              "Counts objects verbally (1–3)",
+              "Identifies simple patterns",
+              "Uses trial-error to solve problems"
+            ],
+            "socio_emotional_development": [
+              "Shows empathy (hugs a crying friend)",
+              "Expresses more feelings using words",
+              "Participates in simple group activities"
+            ],
+            "language_development": [
+              "Understands action words (run, eat)",
+              "Sings parts of rhymes",
+              "Uses possessive words (\"my ball\")"
+            ],
+            "adaptive_self_help_skills": [
+              "Uses toilet with reminders",
+              "Drinks from open cup neatly",
+              "Wears simple clothing with little help"
+            ],
+            "sensory_emotional_regulation": [
+              "Seeks quiet space when overwhelmed",
+              "Reacts less strongly to routine disruptions",
+              "Shows awareness of calming activities (music, books)"
+            ]
+          },
+          {
+            "month": 23,
+            "physical_development": [
+              "Runs and changes direction easily",
+              "Jumps forward with both feet",
+              "Begins using ride-on toys"
+            ],
+            "cognitive_development": [
+              "Understands opposites (hot/cold, big/small)",
+              "Recites parts of familiar rhymes",
+              "Engages in symbolic play (block as phone)"
+            ],
+            "socio_emotional_development": [
+              "Cooperates in routines",
+              "Plays beside peers, occasionally joins in",
+              "Demonstrates increased independence"
+            ],
+            "language_development": [
+              "Uses 100+ words",
+              "Answers simple questions (\"Where is your toy?\")",
+              "Tells name when asked"
+            ],
+            "adaptive_self_help_skills": [
+              "Mostly toilet trained during the day",
+              "Eats meals with little help",
+              "Brushes hair with help"
+            ],
+            "sensory_emotional_regulation": [
+              "Recognizes emotions in self/others",
+              "Requests comfort when needed",
+              "Sits through short routines (story, snack time)"
+            ]
+          }
+        ]
+      },
+      {
+        "level": "Level 3",
+        "age_range": "2-2.5 years",
+        "months": [
+          {
+            "month": 24,
+            "physical_development": [
+              "Runs smoothly, stops and turns easily",
+              "Begins to pedal tricycle",
+              "Climbs stairs alternating feet with help"
+            ],
+            "cognitive_development": [
+              "Matches objects by more than one attribute (color & shape)",
+              "Understands simple cause-effect relationships",
+              "Starts sorting objects into categories"
+            ],
+            "socio_emotional_development": [
+              "Shows increasing independence",
+              "Demonstrates affection for caregivers and familiar people",
+              "Expresses wide range of emotions"
+            ],
+            "language_development": [
+              "Uses 2-3 word sentences regularly",
+              "Understands simple questions",
+              "Names common objects and people"
+            ],
+            "adaptive_self_help_skills": [
+              "Feeds self with little spilling",
+              "Removes some clothing items",
+              "Uses spoon and fork independently"
+            ],
+            "sensory_emotional_regulation": [
+              "Calms down after brief upset",
+              "Shows preferences for certain sensory experiences",
+              "Begins to tolerate frustration better"
+            ]
+          },
+          {
+            "month": 25,
+            "physical_development": [
+              "Jumps with both feet off the ground",
+              "Throws and catches large ball with some control",
+              "Walks backward easily"
+            ],
+            "cognitive_development": [
+              "Completes simple puzzles (3-4 pieces)",
+              "Understands \"big\" and \"small\" concepts",
+              "Engages in pretend play more complexly"
+            ],
+            "socio_emotional_development": [
+              "Shows interest in playing near and with other children",
+              "Begins showing empathy (comforts peers)",
+              "Expresses needs verbally instead of crying"
+            ],
+            "language_development": [
+              "Uses pronouns correctly (I, me, you)",
+              "Combines 3-4 words in sentences",
+              "Follows 2-step instructions"
+            ],
+            "adaptive_self_help_skills": [
+              "Begins toilet training success",
+              "Dresses self with assistance",
+              "Washes hands with reminders"
+            ],
+            "sensory_emotional_regulation": [
+              "Seeks comfort objects when stressed",
+              "Responds to soothing voices",
+              "Begins to manage transitions with minimal distress"
+            ]
+          },
+          {
+            "month": 26,
+            "physical_development": [
+              "Balances on one foot briefly",
+              "Climbs playground equipment with little help",
+              "Runs and changes direction easily"
+            ],
+            "cognitive_development": [
+              "Counts 1-5 with help",
+              "Matches objects by function",
+              "Explores how things work (pushing buttons, opening lids)"
+            ],
+            "socio_emotional_development": [
+              "Imitates adult roles (cooking, cleaning)",
+              "Shows defiance as part of asserting autonomy",
+              "Begins cooperative play in small groups"
+            ],
+            "language_development": [
+              "Vocabulary expands to 200+ words",
+              "Asks simple \"what\" and \"where\" questions",
+              "Names actions and objects"
+            ],
+            "adaptive_self_help_skills": [
+              "Uses toilet during day mostly",
+              "Brushes teeth with help",
+              "Puts on simple clothes"
+            ],
+            "sensory_emotional_regulation": [
+              "Manages emotions better with adult support",
+              "Engages in calming activities when upset",
+              "Shows awareness of personal space"
+            ]
+          },
+          {
+            "month": 27,
+            "physical_development": [
+              "Jumps forward 2-3 times in a row",
+              "Throws ball overhead accurately",
+              "Pedals tricycle with improved control"
+            ],
+            "cognitive_development": [
+              "Understands \"same\" and \"different\"",
+              "Begins sequencing events (before/after)",
+              "Recognizes shapes and colors confidently"
+            ],
+            "socio_emotional_development": [
+              "Plays alongside peers and begins sharing with encouragement",
+              "Expresses frustration verbally",
+              "Seeks adult approval"
+            ],
+            "language_development": [
+              "Uses short sentences of 4+ words",
+              "Retells simple events",
+              "Uses possessive forms (\"my,\" \"mine\")"
+            ],
+            "adaptive_self_help_skills": [
+              "Dresses self with minimal help",
+              "Washes hands independently",
+              "Puts toys away with reminders"
+            ],
+            "sensory_emotional_regulation": [
+              "Shows ability to wait for turn briefly",
+              "Responds well to routines and structure",
+              "Uses words to express discomfort or needs"
+            ]
+          },
+          {
+            "month": 28,
+            "physical_development": [
+              "Walks on tiptoes briefly",
+              "Begins to hop on one foot with help",
+              "Throws ball to a target accurately"
+            ],
+            "cognitive_development": [
+              "Matches objects by multiple attributes",
+              "Recognizes patterns",
+              "Solves simple problems (finding hidden objects)"
+            ],
+            "socio_emotional_development": [
+              "Initiates interactions with peers",
+              "Shows pride in accomplishments",
+              "Demonstrates some control over impulses"
+            ],
+            "language_development": [
+              "Combines sentences to describe events",
+              "Understands prepositions (in, on, under)",
+              "Asks \"why\" questions"
+            ],
+            "adaptive_self_help_skills": [
+              "Toileting mostly independent",
+              "Uses spoon and fork neatly",
+              "Brushes teeth with supervision"
+            ],
+            "sensory_emotional_regulation": [
+              "Can self-soothe using learned strategies",
+              "Responds to comfort and reassurance",
+              "Adapts to new situations with some support"
+            ]
+          },
+          {
+            "month": 29,
+            "physical_development": [
+              "Runs, jumps, and climbs confidently",
+              "Pedals tricycle independently",
+              "Begins using scissors under supervision"
+            ],
+            "cognitive_development": [
+              "Names basic shapes and colors",
+              "Understands simple time concepts (now, later)",
+              "Engages in symbolic play (pretending)"
+            ],
+            "socio_emotional_development": [
+              "Cooperates in group activities",
+              "Understands and follows rules with reminders",
+              "Expresses a wider range of feelings"
+            ],
+            "language_development": [
+              "Speaks in full sentences",
+              "Tells simple stories",
+              "Uses descriptive words"
+            ],
+            "adaptive_self_help_skills": [
+              "Manages dressing independently",
+              "Eats meals with little assistance",
+              "Performs basic hygiene with supervision"
+            ],
+            "sensory_emotional_regulation": [
+              "Manages emotions better during transitions",
+              "Recognizes feelings in self and others",
+              "Uses words to request help or comfort"
+            ]
+          }
+        ]
+      },
+      {
+        "level": "Level 4",
+        "age_range": "2.5-3 years",
+        "months": [
+          {
+            "month": 30,
+            "physical_development": [
+              "Runs easily, changes direction quickly",
+              "Climbs well on playground equipment",
+              "Begins balancing on one foot for 1-2 seconds"
+            ],
+            "cognitive_development": [
+              "Understands simple \"if-then\" scenarios",
+              "Sorts objects by size, shape, color",
+              "Begins to solve simple puzzles (4-6 pieces)"
+            ],
+            "socio_emotional_development": [
+              "Shows more interest in playing with peers",
+              "Begins sharing toys with adult guidance",
+              "Expresses a wider range of emotions clearly"
+            ],
+            "language_development": [
+              "Uses sentences of 3-4 words",
+              "Understands and uses pronouns correctly",
+              "Follows 2-3 step instructions"
+            ],
+            "adaptive_self_help_skills": [
+              "Dresses self with some help",
+              "Uses spoon and fork neatly",
+              "Participates in toileting with reminders"
+            ],
+            "sensory_emotional_regulation": [
+              "Calms down with adult support",
+              "Recognizes feelings like happy, sad, angry",
+              "Shows increasing tolerance for frustration"
+            ]
+          },
+          {
+            "month": 31,
+            "physical_development": [
+              "Jumps forward several times in a row",
+              "Kicks ball forward",
+              "Throws and catches a ball with some accuracy"
+            ],
+            "cognitive_development": [
+              "Recognizes and names basic shapes",
+              "Matches objects by function",
+              "Begins to understand concepts of \"more\" and \"less\""
+            ],
+            "socio_emotional_development": [
+              "Enjoys pretend play and role play",
+              "Seeks comfort when upset",
+              "Shows some empathy toward peers"
+            ],
+            "language_development": [
+              "Vocabulary grows to 300+ words",
+              "Asks simple questions (\"what,\" \"where\")",
+              "Combines 4-5 word sentences"
+            ],
+            "adaptive_self_help_skills": [
+              "Removes and puts on clothes independently",
+              "Brushes teeth with help",
+              "Washes hands independently"
+            ],
+            "sensory_emotional_regulation": [
+              "Uses words to express feelings",
+              "Seeks adult help when frustrated",
+              "Begins to manage transitions smoothly"
+            ]
+          },
+          {
+            "month": 32,
+            "physical_development": [
+              "Balances on one foot for 3-5 seconds",
+              "Climbs stairs alternating feet without support",
+              "Pedals tricycle steadily"
+            ],
+            "cognitive_development": [
+              "Understands size concepts (\"big,\" \"small,\" \"tall,\" \"short\")",
+              "Solves simple problems and puzzles (5-7 pieces)",
+              "Recognizes patterns"
+            ],
+            "socio_emotional_development": [
+              "Initiates play with other children",
+              "Shows independence in tasks",
+              "Expresses frustration verbally instead of tantrums"
+            ],
+            "language_development": [
+              "Uses sentences of 5+ words",
+              "Understands \"why\" and \"how\" questions",
+              "Uses plurals and past tense occasionally"
+            ],
+            "adaptive_self_help_skills": [
+              "Toileting mostly independent",
+              "Feeds self without assistance",
+              "Brushes teeth with supervision"
+            ],
+            "sensory_emotional_regulation": [
+              "Uses simple calming techniques (deep breath, quiet time)",
+              "Shows awareness of others' feelings",
+              "Adapts to changes in routine with minimal upset"
+            ]
+          },
+          {
+            "month": 33,
+            "physical_development": [
+              "Hops on one foot a few times",
+              "Throws ball overhead with accuracy",
+              "Walks backward and sideways easily"
+            ],
+            "cognitive_development": [
+              "Counts 1-10 with help",
+              "Matches objects by multiple attributes",
+              "Understands simple sequencing (first, next, last)"
+            ],
+            "socio_emotional_development": [
+              "Shows pride in achievements",
+              "Shares toys more consistently",
+              "Begins to take turns in play with reminders"
+            ],
+            "language_development": [
+              "Speaks clearly enough to be understood by strangers",
+              "Uses more complex sentences",
+              "Asks and answers questions about stories"
+            ],
+            "adaptive_self_help_skills": [
+              "Dresses and undresses independently",
+              "Washes hands and face independently",
+              "Manages toileting independently"
+            ],
+            "sensory_emotional_regulation": [
+              "Recognizes and names emotions",
+              "Uses words to negotiate conflicts",
+              "Self-regulates better in group settings"
+            ]
+          },
+          {
+            "month": 34,
+            "physical_development": [
+              "Runs, jumps, and climbs confidently",
+              "Pedals tricycle independently",
+              "Begins to use scissors with supervision"
+            ],
+            "cognitive_development": [
+              "Recognizes shapes and colors easily",
+              "Understands \"same\" and \"different\"",
+              "Solves simple cause-effect problems"
+            ],
+            "socio_emotional_development": [
+              "Plays cooperatively in small groups",
+              "Shows concern for friends",
+              "Expresses a range of feelings verbally"
+            ],
+            "language_development": [
+              "Uses sentences with conjunctions (\"and,\" \"but,\" \"because\")",
+              "Tells simple stories",
+              "Uses descriptive language"
+            ],
+            "adaptive_self_help_skills": [
+              "Independently manages basic hygiene",
+              "Dresses with minimal help",
+              "Eats independently with good manners"
+            ],
+            "sensory_emotional_regulation": [
+              "Demonstrates self-soothing skills",
+              "Manages frustration with fewer tantrums",
+              "Responds well to routines and transitions"
+            ]
+          },
+          {
+            "month": 35,
+            "physical_development": [
+              "Can hop 2-3 times on one foot",
+              "Throws and catches ball confidently",
+              "Climbs and descends stairs without support"
+            ],
+            "cognitive_development": [
+              "Understands time concepts (\"morning,\" \"night,\" \"today,\" \"tomorrow\")",
+              "Recognizes numbers 1-10",
+              "Engages in imaginative and pretend play"
+            ],
+            "socio_emotional_development": [
+              "Takes initiative in play",
+              "Shows empathy and understanding",
+              "Follows simple group rules"
+            ],
+            "language_development": [
+              "Speaks in full, clear sentences",
+              "Asks complex questions",
+              "Uses correct grammar most of the time"
+            ],
+            "adaptive_self_help_skills": [
+              "Dresses, eats, and manages toileting independently",
+              "Follows daily routines with minimal reminders"
+            ],
+            "sensory_emotional_regulation": [
+              "Uses words to express complex emotions",
+              "Responds calmly to changes",
+              "Comforts peers who are upset"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
