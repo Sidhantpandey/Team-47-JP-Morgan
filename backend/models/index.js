@@ -4,7 +4,8 @@ import Admin from './admin.cjs';
 import Parent from './parents.cjs';
 import Child from './child.cjs';
 import Volunteer from './volunteer.cjs';
-import VolunteerParent from "./VolunteerParent.cjs"
+import VolunteerParent from "./volunteerParent.cjs"
+import User from "./user.cjs";
 
 // 1. Parent 1 --- n Child
 Parent.hasMany(Child, {
@@ -39,6 +40,7 @@ Volunteer.belongsToMany(Parent, {
 const db = {
   sequelize,
   Sequelize,
+  User,
   Admin,
   Parent,
   Child,

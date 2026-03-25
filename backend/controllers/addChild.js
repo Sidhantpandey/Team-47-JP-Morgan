@@ -36,6 +36,10 @@ export const addChild = async (req, res) => {
     const { fullName, age, gender, level } = req.body;
     // Assume parentId is available from req.user (set by authentication middleware)
     const parentId = req.user?.id;
+    const role = req.user?.role;
+    if (role !== "parent") {
+      return res.status(403).json({ error: "Access denied" });
+    }
     if (!parentId) {
       return res.status(400).json({ error: "Parent not authenticated" });
     }
@@ -61,8 +65,16 @@ export const addChild = async (req, res) => {
 export const updateMilestonesAfterQuiz = async (req, res) => {
   try {
     const { childId, score } = req.body;
+    const role = req.user?.role;
+    if (role !== "parent") {
+      return res.status(403).json({ error: "Access denied" });
+    }
     const child = await Child.findByPk(childId);
     if (!child) return res.status(404).json({ error: "Child not found" });
+    // Parent can only update their own children.
+    if (child.parentId !== req.user?.id) {
+      return res.status(403).json({ error: "Access denied" });
+    }
 
     // Get current month from last milestone entry
     const milestonesArr = Array.isArray(child.milestones)
@@ -94,9 +106,16 @@ export const updateMilestonesAfterQuiz = async (req, res) => {
 export const getChild = async (req, res) => {
   try {
     const { childId } = req.params;
-    console.log(childId); 
+    const role = req.user?.role;
+    if (role !== "parent") {
+      return res.status(403).json({ error: "Access denied" });
+    }
     const child = await Child.findByPk(childId);
     if (!child) return res.status(404).json({ error: "Child not found" });
+    // Parent can only read their own children.
+    if (child.parentId !== req.user?.id) {
+      return res.status(403).json({ error: "Access denied" });
+    }
 
     res.json({ child });
   } catch (err) {

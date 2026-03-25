@@ -2,57 +2,36 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('parents', {
+    await queryInterface.createTable('users', {
       id: {
         type: Sequelize.INTEGER,
-        primaryKey: true,
         autoIncrement: true,
+        primaryKey: true,
         allowNull: false,
       },
-
+      role: {
+        type: Sequelize.ENUM('admin', 'parent', 'volunteer'),
+        allowNull: false,
+      },
       fullName: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-
-      userId: {
-        type: Sequelize.INTEGER,
+      email: {
+        type: Sequelize.STRING,
         allowNull: false,
         unique: true,
-        references: {
-          model: 'users',
-          key: 'id',
-        },
-        onDelete: 'CASCADE',
       },
-
-      phone: {
+      password: {
+        // Hashed password
         type: Sequelize.STRING,
-        allowNull: true,
+        allowNull: false,
       },
-
-      occupation: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-
-      numberOfChildren: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        defaultValue: 0,
-      },
-
-      registrationDate: {
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW,
-      },
-
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
-
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -62,6 +41,9 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('parents');
-  }
+    await queryInterface.dropTable('users');
+    // Note: ENUM type cleanup is DB-specific; Sequelize typically handles it
+    // when re-creating migrations, but keeping this minimal is safer.
+  },
 };
+

@@ -15,16 +15,16 @@ module.exports = {
         allowNull: false,
       },
 
-      email: {
-        type: Sequelize.STRING,
+      userId: {
+        type: Sequelize.INTEGER,
         allowNull: false,
         unique: true,
+        references: {
+          model: 'users',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
       },
-       password: {
-        type: Sequelize.STRING,
-        allowNull: false
-    }
-,
 
       phone: {
         type: Sequelize.STRING,

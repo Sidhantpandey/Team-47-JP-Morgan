@@ -13,14 +13,15 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
-      email: {
-        type: Sequelize.STRING,
+      userId: {
+        type: Sequelize.INTEGER,
         allowNull: false,
         unique: true,
-      },
-      password: {
-        type: Sequelize.STRING,
-        allowNull: false,
+        references: {
+          model: 'users',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
       },
       createdAt: {
         allowNull: false,

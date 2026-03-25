@@ -8,16 +8,15 @@
         autoIncrement: true,
         allowNull: false
     },
-    fullName: DataTypes.STRING,
-    email: {
-        type: DataTypes.STRING,
-        unique: true,
-        allowNull: false
+    fullName: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false
-    }
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      unique: true,
+    },
     }, {
     tableName: 'admins',
     timestamps: true

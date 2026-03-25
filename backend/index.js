@@ -31,12 +31,14 @@ app.use(bodyParser.json());
 // Importing Routes
 import authRoutes from "./routes/auth.routes.js"
 import childRoutes from "./routes/child.routes.js"
+import volunteerRoutes from "./routes/volunteer.routes.js"
 // import adminRoutes from "./routes/admin.routes.js"
 // import parentRoutes from "./routes/parent.routes.js"
 
 
 app.use("/api/auth",authRoutes);
 app.use("/api/child",childRoutes)
+app.use("/api/volunteer",volunteerRoutes);
 // app.use("/api/admin",adminRoutes);
 // app.use("/api/parent",parentRoutes);
 
@@ -48,8 +50,19 @@ app.get("/", (req, res) => {
   res.send("Hello from the Backend-Api");
 });
 
-app.listen(port, async () => {
-  console.log(`Server Listening at PORT ${port}`);
-  await sequelize.authenticate();
-});
+const startServer = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log("Database connected successfully!");
+
+    app.listen(port, () => {
+      console.log(`Server Listening at PORT ${port}`);
+    });
+  } catch (err) {
+    console.error("Unable to connect to the database:", err);
+    process.exit(1);
+  }
+};
+
+startServer();
 

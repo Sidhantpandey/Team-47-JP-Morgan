@@ -13,17 +13,11 @@ const Volunteer = sequelize.define('Volunteer', {
     allowNull: false,
   },
 
-  email: {
-    type: DataTypes.STRING,
+  userId: {
+    type: DataTypes.INTEGER,
     allowNull: false,
     unique: true,
-    validate: { isEmail: true },
   },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false
-    }
-,
   phone: {
     type: DataTypes.STRING,
     allowNull: true,

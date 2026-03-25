@@ -14,13 +14,10 @@ const Parent = sequelize.define('Parent', {
     allowNull: false,
   },
 
-  email: {
-    type: DataTypes.STRING,
+  userId: {
+    type: DataTypes.INTEGER,
     allowNull: false,
     unique: true,
-    validate: {
-      isEmail: true,
-    },
   },
 
   phone: {
@@ -29,11 +26,6 @@ const Parent = sequelize.define('Parent', {
     validate: {
       is: /^[6-9]\d{9}$/i,
     },
-  },
-
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false,
   },
 
   occupation: {

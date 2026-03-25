@@ -1,24 +1,13 @@
-// controllers/volunteerController.js
-
-import Volunteer from '../models/Volunteer.js';
-import jwt from 'jsonwebtoken';
-
-const JWT_SECRET = process.env.JWT_SECRET || 'secret123';
+// controllers/volunteer.controller.js
+import Volunteer from "../models/volunteer.cjs";
 
 export const getVolunteerDashboard = async (req, res) => {
   try {
-    // 1. Extract token from headers
-    const authHeader = req.headers.authorization;
-    if (!authHeader || !authHeader.startsWith('Bearer '))
-      return res.status(401).json({ message: 'Unauthorized: No token provided' });
+    // JWT verification is handled by `protect` middleware.
+    const volunteerId = req.user?.id;
+    if (!volunteerId) return res.status(401).json({ message: "Unauthorized" });
 
-    const token = authHeader.split(' ')[1];
-
-    // 2. Verify token
-    const decoded = jwt.verify(token, JWT_SECRET);
-    const volunteerId = decoded.id;
-
-    // 3. Fetch volunteer data
+    // Fetch volunteer data.
     const volunteer = await Volunteer.findByPk(volunteerId);
     if (!volunteer) return res.status(404).json({ message: 'Volunteer not found' });
 
@@ -29,6 +18,6 @@ export const getVolunteerDashboard = async (req, res) => {
 
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Server error' });
+    res.status(500).json({ error: "Server error" });
   }
 };
