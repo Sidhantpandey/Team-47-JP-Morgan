@@ -12,7 +12,8 @@ import {
 import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import axios from "axios";  
+import { loginUser, registerUser } from "../api/auth.api";
+
 
 export default function LoginPage() {
   const location = useLocation();
@@ -55,18 +56,9 @@ export default function LoginPage() {
     }
 
     try {
-      const { data } = isRegister
-        ? await axios.post("http://localhost:3000/api/auth/register", {
-            fullName: fullname,
-            email,
-            password,
-            role: selectedRole,
-          })
-        : await axios.post("http://localhost:3000/api/auth/login", {
-            email,
-            password,
-            role: selectedRole,
-          });
+      const data = isRegister
+        ? await registerUser(fullname, email, password, selectedRole)
+        : await loginUser(email, password, selectedRole);
 
       console.log("Auth success:", data);
       localStorage.setItem("user", JSON.stringify(data));
