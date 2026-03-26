@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Heart, Star, ChevronLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import {
   LineChart,
@@ -14,6 +13,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import placeholderImage from "../assets/image.png";
 
 // Mock database - in a real app, this would come from your backend
 const childrenDatabase = [
@@ -25,7 +25,7 @@ const childrenDatabase = [
     level: "Kindergarten",
     height: 110,
     weight: 19,
-    image: "/images/riya.jpg",
+    image: placeholderImage,
     growthData: [
       { month: "Jan", height: 108, weight: 18 },
       { month: "Feb", height: 108.5, weight: 18.2 },
@@ -42,7 +42,7 @@ const childrenDatabase = [
     level: "Pre-K",
     height: 105,
     weight: 17,
-    image: "/images/arjun.jpg",
+    image: placeholderImage,
     growthData: [
       { month: "Jan", height: 103, weight: 16 },
       { month: "Feb", height: 103.5, weight: 16.3 },
@@ -79,7 +79,6 @@ export default function ChildDashboard() {
   if (!childData) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
-        <Navbar />
         <main className="container mx-auto px-4 py-24">
           <div className="flex items-center justify-center h-[60vh]">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
@@ -92,7 +91,6 @@ export default function ChildDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
-      <Navbar />
       <main className="container mx-auto px-4 py-24">
         {/* Back Button */}
         <button
@@ -111,6 +109,10 @@ export default function ChildDashboard() {
                 <img
                   src={childData.image}
                   alt={childData.name}
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = placeholderImage;
+                  }}
                   className="w-32 h-32 rounded-full object-cover border-4 border-orange-100"
                 />
                 <div className="absolute -top-2 -right-2">

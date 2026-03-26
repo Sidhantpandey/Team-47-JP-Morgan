@@ -2,15 +2,18 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Heart, Star, ChevronRight, Plus } from "lucide-react";
-import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import MilestoneQuiz from "../Components/MilestoneQuiz";
+import { getStoredUser } from "../utils/auth";
+import placeholderImage from "../assets/image.png";
 
 export default function ParentDashboard() {
   const navigate = useNavigate();
-  const parentName = "Anita";
+  const user = getStoredUser();
+  const parentName = user?.fullName || user?.email || "Parent";
   const [videos, setVideos] = useState([]);
   const [videoError, setVideoError] = useState(null);
+  const [videosLoading, setVideosLoading] = useState(false);
   const [showAddChildForm, setShowAddChildForm] = useState(false);
   const [showQuiz, setShowQuiz] = useState(false);
   const [newChild, setNewChild] = useState({
@@ -32,7 +35,7 @@ export default function ParentDashboard() {
       level: "Kindergarten",
       height: 110,
       weight: 19,
-      image: "/images/riya.jpg",
+      image: placeholderImage,
       growthData: [
         { month: "Jan", height: 108, weight: 18 },
         { month: "Feb", height: 108.5, weight: 18.2 },
@@ -49,7 +52,7 @@ export default function ParentDashboard() {
       level: "Pre-K",
       height: 105,
       weight: 17,
-      image: "/images/arjun.jpg",
+      image: placeholderImage,
       growthData: [
         { month: "Jan", height: 103, weight: 16 },
         { month: "Feb", height: 103.5, weight: 16.3 },
@@ -63,8 +66,12 @@ export default function ParentDashboard() {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
+        setVideosLoading(true);
+        setVideoError(null);
+
         if (!API_KEY) {
-          throw new Error("YouTube API key is missing");
+          setVideoError("YouTube API key is missing");
+          return;
         }
 
         const res = await axios.get(
@@ -77,16 +84,28 @@ export default function ParentDashboard() {
               type: "video",
               maxResults: 3,
             },
+            // Prevent "infinite loading" if YouTube doesn't respond.
+            timeout: 8000,
           }
         );
 
         if (res.data.items) {
           setVideos(res.data.items);
           setVideoError(null);
+        } else {
+          setVideos([]);
+          setVideoError(null);
         }
       } catch (error) {
         console.error("Error fetching videos:", error);
-        setVideoError(error.message);
+        const message =
+          error?.code === "ECONNABORTED" ||
+          error?.message?.toLowerCase()?.includes("timeout")
+            ? "YouTube request timed out. Please check your API key/network."
+            : error?.message || "Failed to fetch videos.";
+        setVideoError(message);
+      } finally {
+        setVideosLoading(false);
       }
     };
 
@@ -105,7 +124,7 @@ export default function ParentDashboard() {
       level: "Not Set",
       height: 0,
       weight: 0,
-      image: newChild.gender === "male" ? "/images/boy-avatar.png" : "/images/girl-avatar.png",
+      image: placeholderImage,
       growthData: []
     };
     setChildren([...children, newChildData]);
@@ -124,22 +143,6 @@ export default function ParentDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
-      <Navbar />
-<button
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-          onClick={() => {
-            // Clear all cookies
-            document.cookie.split(";").forEach((c) => {
-              document.cookie = c
-                .replace(/^ +/, "")
-                .replace(/=.*/, "=;expires=" + new Date(0).toUTCString() + ";path=/");
-            });
-            // Redirect to home
-            window.location.href = "/";
-          }}
-        >
-          Logout
-        </button>
       <main className="container mx-auto px-4 py-24">
         {/* Welcome Section */}
         <div className="text-center mb-12">
@@ -168,6 +171,10 @@ export default function ParentDashboard() {
                     <img
                       src={child.image}
                       alt={child.name}
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = placeholderImage;
+                      }}
                       className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-orange-100"
                     />
                     <div className="absolute -top-2 -right-2">
@@ -198,7 +205,11 @@ export default function ParentDashboard() {
           <div className="bg-white rounded-xl shadow-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">Learning Videos</h2>
             <div className="space-y-4">
-              {videoError ? (
+              {videosLoading ? (
+                <div className="flex items-center justify-center h-32">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500" />
+                </div>
+              ) : videoError ? (
                 <div className="bg-red-50 text-red-600 p-4 rounded-lg">
                   <p>{videoError}</p>
                   <p className="text-sm mt-2">Please check your API key configuration.</p>
@@ -216,11 +227,27 @@ export default function ParentDashboard() {
                   </div>
                 ))
               ) : (
-                <div className="flex items-center justify-center h-32">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500"></div>
+                <div className="text-center text-gray-600 py-8">
+                  No videos found.
                 </div>
               )}
             </div>
+          </div>
+
+          {/* Navigate to Video Verifier */}
+          <div className="bg-white rounded-xl shadow-lg p-6 mt-8">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+              Verify Video
+            </h2>
+            <button
+              onClick={() => navigate("/dashboard/parent/video")}
+              className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-6 py-3 rounded-lg hover:from-orange-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105 font-medium shadow-lg"
+            >
+              Upload & Verify
+            </button>
+            <p className="text-sm text-gray-600 mt-3">
+              Upload a video and show the API response on the verifier page.
+            </p>
           </div>
         </div>
       </main>

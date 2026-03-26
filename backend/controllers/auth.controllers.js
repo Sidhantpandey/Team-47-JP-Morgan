@@ -43,7 +43,14 @@ export const login = async (req, res) => {
     { expiresIn: '1d' }
   );
 
-  return res.status(200).json({ token, id: profile.id, role: normalizedRole });
+  return res.status(200).json({
+    token,
+    id: profile.id,
+    userId: user.id,
+    role: normalizedRole,
+    email: user.email,
+    fullName: user.fullName || profile.fullName,
+  });
 };
 
 
@@ -88,7 +95,9 @@ export const register = async (req, res) => {
     return res.status(201).json({
       token,
       id: profile.id,
+      userId: newUser.id,
       email: newUser.email,
+      fullName: newUser.fullName,
       role: normalizedRole,
     });
   } catch (err) {

@@ -1,4 +1,5 @@
 import { Home } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -21,21 +22,28 @@ const Footer = () => {
               across India.
             </p>
             <div className="flex space-x-4">
-              <button className="text-gray-400 hover:text-orange-400 transition-colors">
+              <a
+                href="https://www.facebook.com/SpacECEIn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-orange-400 transition-colors"
+                aria-label="Facebook"
+              >
                 <div className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-orange-500/20">
                   <span className="text-sm font-bold">f</span>
                 </div>
-              </button>
-              <button className="text-gray-400 hover:text-orange-400 transition-colors">
-                <div className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-orange-500/20">
-                  <span className="text-sm font-bold">t</span>
-                </div>
-              </button>
-              <button className="text-gray-400 hover:text-orange-400 transition-colors">
+              </a>
+              <a
+                href="https://in.linkedin.com/company/spacecein"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-orange-400 transition-colors"
+                aria-label="LinkedIn"
+              >
                 <div className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-orange-500/20">
                   <span className="text-sm font-bold">in</span>
                 </div>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -43,9 +51,9 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Programs</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="#" className="hover:text-orange-400 transition-colors">
-                  UMANG
-                </a>
+                <Link to="/umang-fellowship" className="hover:text-orange-400 transition-colors">
+                  UMANG Fellowship
+                </Link>
               </li>
               <li>
                 <a href="#" className="hover:text-orange-400 transition-colors">
@@ -84,9 +92,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-orange-400 transition-colors">
+                <Link to="/contact" className="hover:text-orange-400 transition-colors">
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -1,7 +1,23 @@
 import { Heart, Star, ChevronRight } from "lucide-react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { getStoredUser } from "../utils/auth";
 
 const HeroSection = () => {
+  const user = getStoredUser();
+  const isLoggedIn = !!user?.token;
+
+  const getDashboardLink = () => {
+    switch (user?.role) {
+      case "admin":
+        return "/admin/dashboard";
+      case "parent":
+        return "/dashboard/parent";
+      case "volunteer":
+        return "/volunteer/dashboard";
+      default:
+        return "/login";
+    }
+  };
   return (
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
@@ -10,7 +26,7 @@ const HeroSection = () => {
           "linear-gradient(135deg, #FFF5E6 0%, #FFE4B5 50%, #F5DEB3 100%)",
       }}
     >
-       
+
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 opacity-30">
@@ -56,16 +72,22 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="group bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-orange-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center space-x-2">
-            <span>Register</span>
-            <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-
-          <Link to='/login'>
-            <button className="border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300">
-              Login
-            </button>
-          </Link>
+          {isLoggedIn ? (
+            <Link to={getDashboardLink()}>
+              <button className="group bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-10 py-4 rounded-full text-xl font-bold hover:from-orange-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center space-x-3">
+                <span>Go to Dashboard</span>
+                <ChevronRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
+              </button>
+            </Link>
+          ) : (
+            <>
+              <Link to="/login">
+                <button className="border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300">
+                  Join Us
+                </button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </section>

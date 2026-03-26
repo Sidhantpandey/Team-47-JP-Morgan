@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../Components/LHeader';
+import Navbar from "../Components/Navbar";
 import HeroSection from "../Components/LHeroSection";
 import ProgramsSection from "../Components/LProgramSection";
 import ImpactSection from "../Components/LImpactSection";
@@ -9,12 +9,14 @@ import Footer from "../Components/LFooter";
 const Landing = () => {
   return (
     <div>
-      <Header />
-      <HeroSection />
-      <ProgramsSection />
-      <ImpactSection />
-      <CTASection />
-      <Footer />
+      <Navbar />
+      <div className="pt-24">
+        <HeroSection />
+        <ProgramsSection />
+        <ImpactSection />
+        <CTASection />
+        <Footer />
+      </div>
       
     </div>
   );

@@ -1,4 +1,5 @@
-import { BookOpen, Star } from "lucide-react";
+import { BookOpen, Star, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ImpactSection = () => {
   const stats = [
@@ -52,7 +53,7 @@ const ImpactSection = () => {
                 nurturing the next generation of leaders, thinkers, and
                 changemakers.
               </p>
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-4 mb-8">
                 <div className="flex items-center space-x-2 text-orange-500">
                   <Star className="h-5 w-5 fill-current" />
                   <Star className="h-5 w-5 fill-current" />
@@ -62,6 +63,13 @@ const ImpactSection = () => {
                 </div>
                 <span className="text-gray-600">4.9/5 Parent Satisfaction</span>
               </div>
+              <Link
+                to="/umang-fellowship"
+                className="inline-flex items-center bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-8 py-3 rounded-full font-bold hover:from-orange-600 hover:to-yellow-600 transition-all transform hover:scale-105 shadow-lg group"
+              >
+                Learn More About UMANG
+                <ChevronRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
             <div className="bg-gray-200 rounded-xl h-64 flex items-center justify-center">
               <div className="text-center text-gray-500">

@@ -5,7 +5,9 @@ import {
   GraduationCap,
   Heart,
   Globe,
+  ChevronRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ProgramsSection = () => {
   const programs = [
@@ -66,20 +68,26 @@ const ProgramsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program, index) => (
-            <div
+            <Link
               key={index}
-              className="group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-200 hover:border-orange-300 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              to="/umang-fellowship"
+              className="group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-200 hover:border-orange-300 hover:shadow-xl transition-all duration-300 transform hover:scale-105 block"
             >
               <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
                 {program.icon}
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                {program.title}
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center justify-between">
+                <span>{program.title}</span>
+                <ChevronRight className="h-6 w-6 text-orange-500 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed mb-6">
                 {program.description}
               </p>
-            </div>
+              <div className="flex items-center text-orange-500 font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                <span>View Details</span>
+                <ChevronRight className="h-4 w-4 ml-1" />
+              </div>
+            </Link>
           ))}
         </div>
       </div>

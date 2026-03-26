@@ -6,6 +6,10 @@ const VideoUploadVerifier = () => {
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const verifyVideoUrl =
+    import.meta.env.VITE_VERIFY_VIDEO_URL ||
+    "http://localhost:5000/api/verify-video";
+
   const handleFileChange = (e) => {
     setVideoFile(e.target.files[0]);
   };
@@ -26,13 +30,17 @@ const VideoUploadVerifier = () => {
 
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:5000/api/verify-video", {
+      const response = await fetch(verifyVideoUrl, {
         method: "POST",
         body: formData,
       });
 
-      const data = await response.json();
-      setResult(data.message);
+      const data = await response.json().catch(() => ({}));
+      if (response.ok) {
+        setResult(data.message || "Video verified.");
+      } else {
+        setResult(data.message || "Error verifying the video.");
+      }
     } catch (error) {
       console.error("Upload error:", error);
       setResult("Error verifying the video.");

@@ -1,4 +1,3 @@
-import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import {
   BarChart,
@@ -42,23 +41,7 @@ export default function AdminDashboard() {
 
   return (
     <>
-      <Navbar />
-<button
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-          onClick={() => {
-            // Clear all cookies
-            document.cookie.split(";").forEach((c) => {
-              document.cookie = c
-                .replace(/^ +/, "")
-                .replace(/=.*/, "=;expires=" + new Date(0).toUTCString() + ";path=/");
-            });
-            // Redirect to home
-            window.location.href = "/";
-          }}
-        >
-          Logout
-        </button>
-      <main className="min-h-[80vh] bg-gray-50 px-6 py-10">
+      <main className="min-h-[80vh] bg-gray-50 px-6 pt-24 pb-10">
         <h1 className="text-3xl font-bold mb-8 text-center">Admin Dashboard</h1>
 
         {/* Stats Grid */}

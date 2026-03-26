@@ -10,13 +10,24 @@ import {
   LogIn,
 } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { loginUser, registerUser } from "../api/auth.api";
+import { getStoredUser } from "../utils/auth";
 
 
 export default function LoginPage() {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const storedUser = getStoredUser();
+  const dashboardPath = (() => {
+    const role = String(storedUser?.role || "").toLowerCase();
+    if (role === "admin") return "/admin/dashboard";
+    if (role === "parent") return "/dashboard/parent";
+    if (role === "volunteer") return "/volunteer/dashboard";
+    return "/";
+  })();
+
   const [selectedRole, setSelectedRole] = useState(location.state?.role || "");
   const [isRegister, setIsRegister] = useState(
     location.state?.isRegister || false
@@ -38,6 +49,37 @@ export default function LoginPage() {
       setIsRegister(location.state.isRegister);
     }
   }, [location.state]);
+
+  useEffect(() => {
+    if (!storedUser?.token) return;
+    const t = setTimeout(() => navigate(dashboardPath), 300);
+    return () => clearTimeout(t);
+  }, [storedUser?.token, dashboardPath, navigate]);
+
+  if (storedUser?.token) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
+        <main className="container mx-auto px-4 py-24 flex flex-col items-center justify-center">
+          <div className="w-full max-w-md bg-white rounded-xl shadow-2xl p-8 text-center">
+            <h2 className="text-2xl font-bold text-gray-800 mb-2">
+              You are already logged in
+            </h2>
+            <p className="text-gray-600 mb-6">
+              Redirecting to your dashboard...
+            </p>
+            <button
+              onClick={() => navigate(dashboardPath)}
+              className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-3 rounded-lg hover:from-orange-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105 font-medium shadow-lg"
+            >
+              Go to Dashboard
+            </button>
+          </div>
+        </main>
+
+        <Footer />
+      </div>
+    );
+  }
 
   const handleRoleSelect = (role) => {
     setSelectedRole(role);
@@ -72,7 +114,11 @@ export default function LoginPage() {
       }
     } catch (err) {
       console.error("Auth failed", err);
-      setError(err.response?.data?.message || "Something went wrong");
+      setError(
+        err?.response?.data?.error ||
+          err?.response?.data?.message ||
+          "Something went wrong"
+      );
     } finally {
       setLoading(false);
     }
@@ -80,8 +126,6 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
-      <Navbar />
-
       <main className="container mx-auto px-4 py-24 flex flex-col items-center justify-center">
         {!selectedRole ? (
           <div className="text-center">
@@ -147,6 +191,11 @@ export default function LoginPage() {
               </div>
 
               <form className="space-y-6">
+                {error ? (
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                    {error}
+                  </div>
+                ) : null}
                 {isRegister && (
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -198,9 +247,16 @@ export default function LoginPage() {
                 <button
                   type="submit"
                   onClick={handleAuth}
+                  disabled={loading}
                   className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-3 rounded-lg hover:from-orange-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105 font-medium shadow-lg flex items-center justify-center space-x-2"
                 >
-                  <span>{isRegister ? "Create Account" : "Sign In"}</span>
+                  <span>
+                    {loading
+                      ? "Please wait..."
+                      : isRegister
+                        ? "Create Account"
+                        : "Sign In"}
+                  </span>
                 </button>
 
                 <p className="text-center text-gray-600">
